@@ -59,3 +59,7 @@ EDIT(26 juillet 2023) : Pas besoin de
 
 source: https://stackoverflow.com/questions/60372790/node-v13-jest-es6-native-support-for-modules-without-babel-or-esm
 
+
+## Credits
+
+https://code-boxx.com/write-csv-nodejs/

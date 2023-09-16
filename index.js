@@ -11,7 +11,6 @@ const conf = new Conf({projectName: 'todolist'})
 
 const service = new InMemoryService(new Conf({projectName: 'todolist'}));
 const myList = () => { list(service)}
-const exportExcel = () => { exportTodo(service)}
 
 conf.set('todo-list',[
   {
@@ -38,7 +37,11 @@ program
 program
   .command('export')
   .description('Export all the TODO tasks')
-  .action(exportExcel)
+  .option('-e, --excel', 'Export to Excel')
+  .option('-c --csv', 'Export to CSV')
+  .action(async (option) => {
+    await exportTodo(service, option)}
+  )
 
 
 program.parse()
