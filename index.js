@@ -5,11 +5,13 @@ import Conf from 'conf';
 
 import {list} from "./commands/list.js"
 import InMemoryService from './services/in-memory-service.js';
+import {exportTodo} from './commands/export.js';
 
 const conf = new Conf({projectName: 'todolist'})
 
 const service = new InMemoryService(new Conf({projectName: 'todolist'}));
 const myList = () => { list(service)}
+const exportExcel = () => { exportTodo(service)}
 
 conf.set('todo-list',[
   {
@@ -32,6 +34,11 @@ program
   .description('List all the TODO tasks')
   .action(myList)
 
+
+program
+  .command('export')
+  .description('Export all the TODO tasks')
+  .action(exportExcel)
 
 
 program.parse()

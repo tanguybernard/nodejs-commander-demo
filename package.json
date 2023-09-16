@@ -13,7 +13,8 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "commander": "^11.0.0",
-    "conf": "^11.0.2"
+    "conf": "^11.0.2",
+    "exceljs": "^4.3.0"
   },
   "bin": {
     "todos": "./index.js"
